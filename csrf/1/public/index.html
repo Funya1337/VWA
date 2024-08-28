@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Home page</h1>
+    <h3>Public Posts: </h3>
+    <ul id="post-list">
+    </ul>
+
+    <script>
+        fetch('/api/posts')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('post-list');
+                data.forEach(item => {
+                    const li = document.createElement('li');
+
+                    const usernameSpan = document.createElement('span');
+                    usernameSpan.textContent = item.username;
+                    usernameSpan.style.color = 'red';
+
+                    const bodyText = document.createTextNode(': ' + item.body);
+                    li.innerHTML = "USERNAME: " + item.username + "<br/> BODY: " + item.body;
+                    list.appendChild(li);
+                });
+                console.log('Fetched posts:', data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
